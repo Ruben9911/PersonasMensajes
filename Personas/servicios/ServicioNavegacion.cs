@@ -13,7 +13,7 @@ namespace Personas.servicios
     {
         public ListaPersonasControl listaPersonas { get; set; }
         public ServicioNavegacion() { }
- bool 
+
         // Devuelve un nuevo UserControl de NuevaPersona
         internal UserControl AbrirNuevaPersona() => new NuevaPersonaControl();
 
