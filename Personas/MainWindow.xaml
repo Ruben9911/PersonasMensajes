@@ -14,8 +14,7 @@
             <Setter Property="Margin" Value="20,10,10,0" />
         </Style>
     </Window.Resources>
-    
-    
+
     <DockPanel>
         <!-- Contenedor con los botones -->
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
@@ -27,6 +26,5 @@
         <Border BorderBrush="Black" BorderThickness="3" Margin="10">
             <ContentControl Content="{Binding Path=PestañaActual}" />
         </Border>
-        
     </DockPanel>
 </Window>

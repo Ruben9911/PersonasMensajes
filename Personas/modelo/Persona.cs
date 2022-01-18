@@ -1,14 +1,9 @@
 ﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Personas.modelo
 {
-    class Persona : ObservableObject
+    internal class Persona : ObservableObject
     {
         private String nombre;
 
@@ -42,7 +37,6 @@ namespace Personas.modelo
             set { SetProperty(ref datos, value); }
         }
 
-
         public Persona(string nombre, int edad, string nacionalidad)
         {
             this.nombre = nombre;
@@ -52,6 +46,5 @@ namespace Personas.modelo
         }
 
         public override string ToString() => $"{nombre} - {edad} - {nacionalidad}";
-        
     }
 }

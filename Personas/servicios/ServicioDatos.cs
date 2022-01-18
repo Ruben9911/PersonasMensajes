@@ -1,14 +1,10 @@
 ﻿using Personas.modelo;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Personas.servicios
 {
-    class ServicioDatos
+    internal class ServicioDatos
     {
         public static ObservableCollection<Persona> GetPersonas() =>
             new ObservableCollection<Persona>()

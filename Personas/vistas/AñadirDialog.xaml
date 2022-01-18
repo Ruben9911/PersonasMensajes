@@ -9,14 +9,14 @@
         ShowInTaskbar="False"
         ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner"
-        Title="AñadirDialog" Height="150" Width="400"  >
+        Title="AñadirDialog" Height="150" Width="400">
     <StackPanel Margin="10">
-        <TextBlock Text="Nacionalidad" Margin="15,5,15,5"/>
-        <TextBox Margin="15,5,15,5"/>
+        <TextBlock Text="Nacionalidad" Margin="15,5,15,5" />
+        <TextBox Margin="15,5,15,5" Text="{Binding Path=Nacionalidad}" /> <!-- Binding a la propiedad Nacionalidad en AñadirDialogoVM -->
         <StackPanel Orientation="Horizontal" Margin="15,5,15,5" HorizontalAlignment="Right">
 
-            <Button Content="Aceptar" Margin="0,0,10,0" Width="70" x:Name="AceptarButton" IsDefault="True" Click="AceptarButton_Click"/>
-            <Button Content="Cancelar" Width="70" IsCancel="True"/>
+            <Button Content="Aceptar" Margin="0,0,10,0" Width="70" x:Name="AceptarButton" IsDefault="True" Click="AceptarButton_Click" />
+            <Button Content="Cancelar" Width="70" IsCancel="True" />
         </StackPanel>
     </StackPanel>
 </Window>

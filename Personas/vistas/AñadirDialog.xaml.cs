@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Personas.vms;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Personas.vistas
 {
@@ -19,13 +8,16 @@ namespace Personas.vistas
     /// </summary>
     public partial class AñadirDialog : Window
     {
+        private AñadirDialogoVM vm = new AñadirDialogoVM();
         public AñadirDialog()
         {
             InitializeComponent();
+            DataContext = vm;
         }
 
         private void AceptarButton_Click(object sender, RoutedEventArgs e)
         {
+            vm.EnviarNuevaNacionalidad();
             DialogResult = true;
         }
     }

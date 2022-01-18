@@ -1,12 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Personas.modelo;
+using Personas.servicios;
+using System.Collections.ObjectModel;
 
 namespace Personas.vms
 {
-    class ListaPersonasVM
+    internal class ListaPersonasVM : ObservableObject
     {
+        // Propiedad donde se guardan los objetos de Persona
+        private ObservableCollection<Persona> listaPersonas;
+
+        public ObservableCollection<Persona> ListaPersonas
+        {
+            get { return listaPersonas; }
+            set { SetProperty(ref listaPersonas, value); }
+        }
+
+        public ListaPersonasVM()
+        {
+            ListaPersonas = ServicioDatos.GetPersonas();
+        }
     }
 }
