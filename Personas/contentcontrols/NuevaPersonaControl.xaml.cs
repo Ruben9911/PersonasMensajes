@@ -14,5 +14,10 @@ namespace Personas.contentcontrols
             InitializeComponent();
             DataContext = vm;
         }
+
+        private void AceptarButton_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            vm.AñadirPersona();
+        }
     }
 }

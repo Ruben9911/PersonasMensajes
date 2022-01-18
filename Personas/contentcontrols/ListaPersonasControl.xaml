@@ -8,6 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Border BorderBrush="Gray" BorderThickness="2" Margin="10">
         <ListBox ItemsSource="{Binding Path=ListaPersonas}"
+                 SelectedItem="{Binding Path=PersonaSeleccionada}"
                  ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ListBox.ItemsPanel>
                 <ItemsPanelTemplate>

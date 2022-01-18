@@ -20,6 +20,7 @@
         <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
             <Button Content="Nueva Persona" Style="{StaticResource EstiloBotones}" Command="{Binding Path=AbrirNuevaPersonaCommand}" />
             <Button Content="Lista de Personas" Style="{StaticResource EstiloBotones}" Command="{Binding Path=AbrirListaPersonasCommand}" />
+            <Button Content="Consulta Persona" Style="{StaticResource EstiloBotones}" Command="{Binding Path=AbrirConsultaPersonaCommand}" />
         </StackPanel>
 
         <!-- Contenedor donde aparecerá la pestaña actual-->

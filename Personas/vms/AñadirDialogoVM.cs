@@ -24,6 +24,7 @@ namespace Personas.vms
         // Cuando se pulsa el botón Aceptar, enviamos lo que hay en el textblock bindeado en Nacionalidad
         public void EnviarNuevaNacionalidad()
         {
+            // Envía mensaje de difusión informando de la nacionalidad agregada (lo recibe NuevaPersonaVM)
             WeakReferenceMessenger.Default.Send(new AgregarNacionalidadMessage(Nacionalidad));
         }
 
