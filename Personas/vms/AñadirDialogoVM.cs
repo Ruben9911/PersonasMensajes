@@ -1,8 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Microsoft.Toolkit.Mvvm.Messaging;
-using Personas.mensajeria;
-using Personas.servicios;
+﻿using Personas.mensajeria;
 
 namespace Personas.vms
 {
@@ -16,7 +12,6 @@ namespace Personas.vms
             set { SetProperty(ref nacionalidad, value); }
         }
 
-        
         public AñadirDialogoVM()
         {
         }
@@ -27,6 +22,5 @@ namespace Personas.vms
             // Envía mensaje de difusión informando de la nacionalidad agregada (lo recibe NuevaPersonaVM)
             WeakReferenceMessenger.Default.Send(new AgregarNacionalidadMessage(Nacionalidad));
         }
-
     }
 }

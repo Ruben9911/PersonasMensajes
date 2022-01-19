@@ -22,7 +22,5 @@ namespace Personas.servicios
 
         // Abre un diálogo y devuelve el resultado
         public static bool? AbrirAñadirDialog() => new AñadirDialog().ShowDialog();
-
-
     }
 }

@@ -9,6 +9,7 @@ namespace Personas.contentcontrols
     public partial class NuevaPersonaControl : UserControl
     {
         private NuevaPersonaVM vm = new NuevaPersonaVM();
+
         public NuevaPersonaControl()
         {
             InitializeComponent();

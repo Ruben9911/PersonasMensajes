@@ -1,9 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Personas.modelo;
-using Personas.servicios;
-using System;
-using System.Collections.ObjectModel;
+﻿using Personas.servicios;
 using System.Windows.Controls;
 
 namespace Personas.vms

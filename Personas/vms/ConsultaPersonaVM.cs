@@ -1,18 +1,11 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Messaging;
-using Personas.mensajeria;
+﻿using Personas.mensajeria;
 using Personas.modelo;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Personas.vms
 {
-    class ConsultaPersonaVM : ObservableObject
+    internal class ConsultaPersonaVM : ObservableObject
     {
-        // Propiedad a la que bindearemos los textbox del XAML 
+        // Propiedad a la que bindearemos los textbox del XAML
         private Persona personaActual;
 
         public Persona PersonaActual
@@ -25,7 +18,6 @@ namespace Personas.vms
         {
             // Solicita la persona seleccionada a ListaPersonasVM
             PersonaActual = WeakReferenceMessenger.Default.Send<ConsultaPersonaRequestMessage>();
-
         }
     }
 }

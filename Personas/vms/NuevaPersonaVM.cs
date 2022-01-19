@@ -1,7 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Input;
-using Microsoft.Toolkit.Mvvm.Messaging;
-using Personas.mensajeria;
+﻿using Personas.mensajeria;
 using Personas.modelo;
 using Personas.servicios;
 using System;
@@ -36,7 +33,6 @@ namespace Personas.vms
             set { SetProperty(ref nacionalidad, value); }
         }
 
-
         // Comando para abrir el dialogo para añadir una nacionalidad
         public RelayCommand AbrirAñadirDialogCommand { get; set; }
 
@@ -58,8 +54,8 @@ namespace Personas.vms
 
             // NuevaPersonaVM se suscribe al mensaje de difusión mandado por AñadirDialogoVM
             WeakReferenceMessenger.Default.Register<AgregarNacionalidadMessage>
-                (this, (r, mensaje) => 
-                { 
+                (this, (r, mensaje) =>
+                {
                     ListaNacionalidades.Add(mensaje.Value);
                 });
         }
@@ -70,6 +66,7 @@ namespace Personas.vms
         {
             WeakReferenceMessenger.Default.Send(new AgregarPersonaMessage(new Persona(Nombre, Edad, Nacionalidad)));
         }
+
         private void AbrirAñadirDialog()
         {
             ServicioNavegacion.AbrirAñadirDialog();

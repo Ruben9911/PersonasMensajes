@@ -9,6 +9,7 @@ namespace Personas.vistas
     public partial class AñadirDialog : Window
     {
         private AñadirDialogoVM vm = new AñadirDialogoVM();
+
         public AñadirDialog()
         {
             InitializeComponent();

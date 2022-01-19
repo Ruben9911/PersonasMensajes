@@ -1,6 +1,4 @@
-﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
-using Microsoft.Toolkit.Mvvm.Messaging;
-using Personas.mensajeria;
+﻿using Personas.mensajeria;
 using Personas.modelo;
 using Personas.servicios;
 using System.Collections.ObjectModel;
