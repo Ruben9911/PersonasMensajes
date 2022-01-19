@@ -1,9 +1,11 @@
-﻿using Personas.mensajeria;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
+using Personas.mensajeria;
 using Personas.modelo;
 
 namespace Personas.vms
 {
-    internal class ConsultaPersonaVM : ObservableObject
+    internal class ConsultaPersonaVM : ObservableRecipient
     {
         // Propiedad a la que bindearemos los textbox del XAML
         private Persona personaActual;

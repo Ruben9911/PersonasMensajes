@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.Messaging.Messages;
+using System;
 
 namespace Personas.mensajeria
 {

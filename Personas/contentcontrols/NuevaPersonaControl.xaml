@@ -9,12 +9,12 @@
     <StackPanel>
         <StackPanel Margin="10">
             <TextBlock Text="Nombre" />
-            <TextBox Text="{Binding Path=Nombre}" />
+            <TextBox Text="{Binding Path=PersonaActual.Nombre}" />
             <TextBlock Text="Edad" />
-            <TextBox Text="{Binding Path=Edad}" />
+            <TextBox Text="{Binding Path=PersonaActual.Edad}" />
             <TextBlock Text="Nacionalidad" />
             <StackPanel Orientation="Horizontal">
-                <ComboBox Width="150" ItemsSource="{Binding Path=ListaNacionalidades}" SelectedItem="{Binding Path=Nacionalidad}" />
+                <ComboBox Width="150" ItemsSource="{Binding Path=ListaNacionalidades}" SelectedItem="{Binding Path=PersonaActual.Nacionalidad}" />
                 <Button Content="+"  Width="30" Command="{Binding Path=AbrirAñadirDialogCommand}" />
             </StackPanel>
             <Button Content="Aceptar" HorizontalAlignment="Center"  Width="100" Click="AceptarButton_Click" />

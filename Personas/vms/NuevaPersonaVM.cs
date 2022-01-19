@@ -1,4 +1,7 @@
-﻿using Personas.mensajeria;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Input;
+using Microsoft.Toolkit.Mvvm.Messaging;
+using Personas.mensajeria;
 using Personas.modelo;
 using Personas.servicios;
 using System;
@@ -9,29 +12,14 @@ namespace Personas.vms
     internal class NuevaPersonaVM : ObservableObject
     {
         // Propiedades del formulario que creará una nueva Persona
-        private String nombre;
+        private Persona personaActual;
 
-        public String Nombre
+        public Persona PersonaActual
         {
-            get { return nombre; }
-            set { SetProperty(ref nombre, value); }
+            get { return personaActual; }
+            set { SetProperty(ref personaActual, value); }
         }
 
-        private int edad;
-
-        public int Edad
-        {
-            get { return edad; }
-            set { SetProperty(ref edad, value); }
-        }
-
-        private String nacionalidad;
-
-        public String Nacionalidad
-        {
-            get { return nacionalidad; }
-            set { SetProperty(ref nacionalidad, value); }
-        }
 
         // Comando para abrir el dialogo para añadir una nacionalidad
         public RelayCommand AbrirAñadirDialogCommand { get; set; }
@@ -52,6 +40,7 @@ namespace Personas.vms
             // Carga de datos de las nacionalidades
             ListaNacionalidades = ServicioDatos.GetNacionalidades();
 
+            PersonaActual = new Persona();
             // NuevaPersonaVM se suscribe al mensaje de difusión mandado por AñadirDialogoVM
             WeakReferenceMessenger.Default.Register<AgregarNacionalidadMessage>
                 (this, (r, mensaje) =>
@@ -64,7 +53,7 @@ namespace Personas.vms
         // Crea un objeto Persona con todos los datos del formulario y envía un mensaje de difusión al que está suscrito ListaPersonasVM
         public void AñadirPersona()
         {
-            WeakReferenceMessenger.Default.Send(new AgregarPersonaMessage(new Persona(Nombre, Edad, Nacionalidad)));
+            WeakReferenceMessenger.Default.Send(new AgregarPersonaMessage(PersonaActual));
         }
 
         private void AbrirAñadirDialog()

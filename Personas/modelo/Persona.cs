@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using System;
 
 namespace Personas.modelo
 {
@@ -42,6 +43,10 @@ namespace Personas.modelo
             this.edad = edad;
             this.nacionalidad = nacionalidad;
             Datos = ToString();
+        }
+
+        public Persona()
+        {
         }
 
         public override string ToString() => $"{nombre} - {edad} - {nacionalidad}";

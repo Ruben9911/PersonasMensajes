@@ -1,4 +1,6 @@
-﻿using Personas.mensajeria;
+﻿using Microsoft.Toolkit.Mvvm.ComponentModel;
+using Microsoft.Toolkit.Mvvm.Messaging;
+using Personas.mensajeria;
 
 namespace Personas.vms
 {
