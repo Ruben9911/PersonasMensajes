@@ -30,6 +30,7 @@ namespace Personas.modelo
         }
 
         private String datos;
+        private Persona personaActual;
 
         public String Datos
         {
@@ -47,6 +48,11 @@ namespace Personas.modelo
 
         public Persona()
         {
+        }
+
+        public Persona(Persona personaActual)
+        {
+            this.personaActual = personaActual;
         }
 
         public override string ToString() => $"{nombre} - {edad} - {nacionalidad}";

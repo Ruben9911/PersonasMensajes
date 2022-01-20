@@ -7,5 +7,10 @@ namespace Personas
     /// </summary>
     public partial class App : Application
     {
+        public App()
+        {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Personas.Properties.Settings.Default.licenciaSF );
+        }
     }
 }

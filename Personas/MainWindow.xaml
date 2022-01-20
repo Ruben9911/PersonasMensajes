@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Personas"
+        xmlns:properties="clr-namespace:Personas.Properties"
         mc:Ignorable="d"
         Title="Personas " Height="450" Width="800" MaxHeight="450" MaxWidth="800">
 
@@ -22,10 +23,13 @@
             <Button Content="Lista de Personas" Style="{StaticResource EstiloBotones}" Command="{Binding Path=AbrirListaPersonasCommand}" />
             <Button Content="Consulta Persona" Style="{StaticResource EstiloBotones}" Command="{Binding Path=AbrirConsultaPersonaCommand}" />
         </StackPanel>
+        
+        <TextBlock FontSize="20" DockPanel.Dock="Bottom" Text="{Binding Source={x:Static properties:Settings.Default}, Path=versionAPP, Mode=OneWay}"></TextBlock>
 
         <!-- Contenedor donde aparecerá la pestaña actual-->
         <Border BorderBrush="Black" BorderThickness="3" Margin="10">
             <ContentControl Content="{Binding Path=PestañaActual}" />
         </Border>
+
     </DockPanel>
 </Window>

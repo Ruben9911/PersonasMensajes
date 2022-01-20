@@ -4,20 +4,45 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Personas.contentcontrols"
+             xmlns:inputLayout="clr-namespace:Syncfusion.UI.Xaml.TextInputLayout;assembly=Syncfusion.SfTextInputLayout.WPF"
              mc:Ignorable="d"
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <StackPanel Margin="10">
-            <TextBlock Text="Nombre" />
-            <TextBox Text="{Binding Path=PersonaActual.Nombre}" />
-            <TextBlock Text="Edad" />
-            <TextBox Text="{Binding Path=PersonaActual.Edad}" />
-            <TextBlock Text="Nacionalidad" />
+            <inputLayout:SfTextInputLayout
+                Hint="Nombre"
+                HintFloatMode="Float"
+                HelperText="Introduce tu nombre">
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="/assets/person.png" />
+                </inputLayout:SfTextInputLayout.LeadingView>
+                <TextBox Text="{Binding Path=PersonaActual.Nombre}" />
+            </inputLayout:SfTextInputLayout>
+
+            <inputLayout:SfTextInputLayout
+                Hint="Edad"
+                HintFloatMode="Float"
+                HelperText="Introduce tu edad">
+                <inputLayout:SfTextInputLayout.LeadingView>
+                    <Image Source="/assets/cake.png" />
+                </inputLayout:SfTextInputLayout.LeadingView>
+                <TextBox Text="{Binding Path=PersonaActual.Edad}" />
+            </inputLayout:SfTextInputLayout>
+
+
             <StackPanel Orientation="Horizontal">
-                <ComboBox Width="150" ItemsSource="{Binding Path=ListaNacionalidades}" SelectedItem="{Binding Path=PersonaActual.Nacionalidad}" />
-                <Button Content="+"  Width="30" Command="{Binding Path=AbrirAñadirDialogCommand}" />
+                <inputLayout:SfTextInputLayout
+                Hint="Nacionalidad"
+                HintFloatMode="Float"
+                HelperText="Introduce tu Nacionalidad">
+                    <inputLayout:SfTextInputLayout.LeadingView>
+                        <Image Source="/assets/world.png" />
+                    </inputLayout:SfTextInputLayout.LeadingView>
+                    <ComboBox Width="150" ItemsSource="{Binding Path=ListaNacionalidades}" SelectedItem="{Binding Path=PersonaActual.Nacionalidad}" />
+                </inputLayout:SfTextInputLayout>
+                <Button Content="+"  Width="30" Height="30" Command="{Binding Path=AbrirAñadirDialogCommand}" />
             </StackPanel>
-            <Button Content="Aceptar" HorizontalAlignment="Center"  Width="100" Click="AceptarButton_Click" />
+            <Button Content="Aceptar" HorizontalAlignment="Center" VerticalAlignment="Center"  Width="100" Click="AceptarButton_Click" />
         </StackPanel>
     </StackPanel>
 </UserControl>

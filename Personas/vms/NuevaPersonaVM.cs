@@ -53,7 +53,7 @@ namespace Personas.vms
         // Crea un objeto Persona con todos los datos del formulario y envía un mensaje de difusión al que está suscrito ListaPersonasVM
         public void AñadirPersona()
         {
-            WeakReferenceMessenger.Default.Send(new AgregarPersonaMessage(PersonaActual));
+            WeakReferenceMessenger.Default.Send(new AgregarPersonaMessage(new Persona(PersonaActual.Nombre, PersonaActual.Edad, PersonaActual.Nacionalidad)));
         }
 
         private void AbrirAñadirDialog()
